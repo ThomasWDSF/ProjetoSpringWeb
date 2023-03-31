@@ -4,6 +4,7 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "administradores")
@@ -14,13 +15,18 @@ public class Administrador {
     @Column(name = "id")
     private int id;
 
+    @jakarta.validation.constraints.NotNull(message = "Não pode ser nulo")
+    @NotBlank(message = "É obrigatório um nome")
     @Column(name = "nome", length = 100, nullable = false)
     private String nome;
 
+    @jakarta.validation.constraints.NotNull(message = "Não pode ser nulo")
+    @NotBlank(message = "É obrigatório um email")
     @Column(name = "email", length = 180, nullable = false)
     private String email;
 
-
+    @jakarta.validation.constraints.NotNull(message = "Não pode ser nulo")
+    @NotBlank(message = "É obrigatório uma senha")
     @Column(name = "senha", length = 255, nullable = false)
     private String senha;
 

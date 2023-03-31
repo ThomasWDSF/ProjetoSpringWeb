@@ -1,0 +1,37 @@
+<div th:replace="shared/header"></div>
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Novo Administrador</h1>
+                     <p class="mb-4">Aqui iremos cadastrar um novo administrador</p>
+
+                    <!-- DataTales Example -->
+                     <div class="card shadow mb-4" style="padding: 30px;">
+                        <form method="POST" th:action="@{'/admin/' + ${administrador.id} + '/atualizar'}">
+
+                            <div class="form-group">
+                              <label for="nome">Nome</label>
+                              <input type="text" class="form-control" required id="nome" name="nome" placeholder="Digite seu nome">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="email">Email</label>
+                              <input type="email" class="form-control" required id="email" name="email" placeholder="Digite seu email">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="nome">Senha</label>
+                              <input type="password" class="form-control" required id="senha" name="senha" placeholder="Digite a sua senha">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="observacao">Observação</label>
+                              <textarea class="form-control" id="observacao" name="observacao" placeholder="Digite uma observação"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Criar</button>
+                          </form>
+                </div>
+                <!-- /.container-fluid -->
+<div th:replace="shared/footer"></div>

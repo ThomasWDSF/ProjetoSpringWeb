@@ -1,0 +1,37 @@
+<div th:replace="shared/header"></div>
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Edição de Administrador</h1>
+                     <p class="mb-4">Aqui iremos editar um administrador</p>
+
+                    <!-- DataTales Example -->
+                     <div class="card shadow mb-4" style="padding: 30px;">
+                        <form method="POST" action="/admin/criar">
+
+                            <div class="form-group">
+                              <label for="nome">Nome</label>
+                              <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="email">Email</label>
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="nome">Senha</label>
+                              <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a sua senha">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="observacao">Observação</label>
+                              <textarea class="form-control" id="observacao" name="observacao" placeholder="Digite uma observação"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Criar</button>
+                          </form>
+                </div>
+                <!-- /.container-fluid -->
+<div th:replace="shared/footer"></div>

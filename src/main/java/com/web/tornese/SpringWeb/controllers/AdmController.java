@@ -48,8 +48,21 @@ public class AdmController {
     @GetMapping("admin/{id}")
     public String busca(@PathVariable int id, Model model){
         Optional<Administrador> admin = repo.findById(id);
-        model.addAttribute("administrador", admin);
+        try{ model.addAttribute("administrador", admin.get());}
+         catch(Exception erro) { return "redirect:/admin";}  
         return "admin/editar";
+    }
+
+    @PostMapping("admin/{id}/atualizar")
+    public String atualizar(@PathVariable int id, Administrador administrador){
+
+        if (!repo.existsById(id)){
+            return "redirect:/admin";
+        }
+        
+        repo.save(administrador);
+
+        return "redirect:/admin";
     }
 
     @GetMapping("/admin/{id}/excluir")

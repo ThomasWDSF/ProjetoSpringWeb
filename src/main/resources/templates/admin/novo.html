@@ -1,4 +1,5 @@
 <div th:replace="shared/header"></div>
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -8,7 +9,7 @@
 
                     <!-- DataTales Example -->
                      <div class="card shadow mb-4" style="padding: 30px;">
-                        <form method="POST" th:action="@{'/admin/' + ${administrador.id} + '/atualizar'}">
+                        <form method="POST"  action="/admin/criar" >
 
                             <div class="form-group">
                               <label for="nome">Nome</label>
@@ -34,4 +35,5 @@
                           </form>
                 </div>
                 <!-- /.container-fluid -->
+                
 <div th:replace="shared/footer"></div>
